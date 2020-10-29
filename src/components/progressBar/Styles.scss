@@ -1,0 +1,16 @@
+@import '../../styles/utils/colors';
+@import '../../styles/utils/breakpoints';
+
+.progressBar {
+  display: flex;
+  align-items: center;
+
+  &--container {
+    border: solid red;
+    height: 15px;
+    width: 95%;
+    align-items: center;
+    border-radius: 50px;
+    background-color: $elephant-paw;
+  }
+}
