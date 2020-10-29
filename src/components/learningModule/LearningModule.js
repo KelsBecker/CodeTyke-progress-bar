@@ -1,6 +1,7 @@
 import React from 'react';
 import SelectionBox from '../selectionBox/SelectionBox';
 import Button from '../button/Button';
+import ProgressBar from '../progressBar/ProgressBar';
 
 import './Styles.scss';
 
@@ -8,6 +9,7 @@ const LearningModule = ({setGameStatus}) => {
   const [currentQuestionId, setCurrentQuestionId] = React.useState(0);
   const [quizData, setQuizData] = React.useState({});
   let currentQuestion = quizData.questionArr ? quizData.questionArr[currentQuestionId]: {};
+  console.log('Question -->', currentQuestion)
   React.useEffect(()=>{
     getQuizData();
   },[]);
@@ -43,6 +45,8 @@ const LearningModule = ({setGameStatus}) => {
     <div className="learningModule">
       { currentQuestion.title &&
         <>
+        {/* send any props to the progress bar component through this */}
+        <ProgressBar/>
           <div className="learningModule--header">
             <div className="learningModule--title">
               { currentQuestion.title }
